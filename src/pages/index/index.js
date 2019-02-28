@@ -21,7 +21,8 @@ class Index extends Component {
   }
 
   componentDidMount() {
-    console.log("store", this.props.commonStore);
+    // console.log("store", this.props.commonStore);
+    console.log("wx", wx);
   }
 
   componentWillUnmount() {
@@ -52,9 +53,6 @@ class Index extends Component {
     const {commonStore: {loadingStatus}} = this.props;
     return (
       <View className='index'>
-        <Button onClick={this.increment}>+</Button>
-        <Button onClick={this.decrement}>-</Button>
-        <Button onClick={this.incrementAsync}>Add Async</Button>
         <Text>{loadingStatus}</Text>
       </View>
     );

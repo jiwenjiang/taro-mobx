@@ -13,7 +13,7 @@ class CommonStore {
 
 
   constructor() {
-    this.loadingStatus = 2333;
+    this.loadingStatus = 111;
   }
 
   // 等待动画
