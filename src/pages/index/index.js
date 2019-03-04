@@ -1,62 +1,58 @@
-import Taro, {Component} from "@tarojs/taro";
-import {View, Button, Text} from "@tarojs/components";
-import {observer, inject} from "@tarojs/mobx";
+import Taro, { Component } from '@tarojs/taro'
+import { View, Button, Text } from '@tarojs/components'
+import { observer, inject } from '@tarojs/mobx'
 
-import "./index.less";
+import './index.scss'
 
 
-@inject("commonStore")
+@inject('counterStore')
 @observer
 class Index extends Component {
 
   config = {
-    navigationBarTitleText: "首页"
-  };
-
-  componentWillMount() {
+    navigationBarTitleText: '首页'
   }
 
-  componentWillReact() {
-    console.log("componentWillReact");
+  componentWillMount () { }
+
+  componentWillReact () {
+    console.log('componentWillReact')
   }
 
-  componentDidMount() {
-    // console.log("store", this.props.commonStore);
-    console.log("wx", wx);
-  }
+  componentDidMount () { }
 
-  componentWillUnmount() {
-  }
+  componentWillUnmount () { }
 
-  componentDidShow() {
-  }
+  componentDidShow () { }
 
-  componentDidHide() {
-  }
+  componentDidHide () { }
 
   increment = () => {
-    const {counterStore} = this.props;
-    counterStore.increment();
-  };
+    const { counterStore } = this.props
+    counterStore.increment()
+  }
 
   decrement = () => {
-    const {counterStore} = this.props;
-    counterStore.decrement();
-  };
+    const { counterStore } = this.props
+    counterStore.decrement()
+  }
 
   incrementAsync = () => {
-    const {counterStore} = this.props;
-    counterStore.incrementAsync();
-  };
+    const { counterStore } = this.props
+    counterStore.incrementAsync()
+  }
 
-  render() {
-    const {commonStore: {loadingStatus}} = this.props;
+  render () {
+    const { counterStore: { counter } } = this.props
     return (
       <View className='index'>
-        <Text>{loadingStatus}</Text>
+        <Button onClick={this.increment}>+</Button>
+        <Button onClick={this.decrement}>-</Button>
+        <Button onClick={this.incrementAsync}>Add Async</Button>
+        <Text>{counter}</Text>
       </View>
-    );
+    )
   }
 }
 
-export default Index;
+export default Index 

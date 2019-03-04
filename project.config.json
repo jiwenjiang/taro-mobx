@@ -1,15 +1,14 @@
 {
 	"miniprogramRoot": "dist/",
-	"projectname": "taro-mobx",
-	"description": "taro-mobx",
+	"projectname": "taro-mobx-test",
+	"description": "b",
 	"appid": "touristappid",
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": false,
 		"postcss": false,
 		"minified": false,
-		"newFeature": true,
-		"autoAudits": false
+		"newFeature": true
 	},
 	"compileType": "miniprogram",
 	"condition": {}

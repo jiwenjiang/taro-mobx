@@ -1,9 +1,10 @@
-import Taro, {Component} from "@tarojs/taro";
-import {Provider} from "@tarojs/mobx";
-import Index from "./pages/index";
-import store from "@store";
+import Taro, { Component } from '@tarojs/taro'
+import { Provider } from '@tarojs/mobx'
+import Index from './pages/index'
 
-import "./app.less";
+import counterStore from './store/counter'
+
+import './app.scss'
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -11,42 +12,41 @@ import "./app.less";
 //   require('nerv-devtools')
 // }
 
+const store = {
+  counterStore
+}
 
 class App extends Component {
 
   config = {
     pages: [
-      "pages/index/index"
+      'pages/index/index'
     ],
     window: {
-      backgroundTextStyle: "light",
-      navigationBarBackgroundColor: "#fff",
-      navigationBarTitleText: "WeChat",
-      navigationBarTextStyle: "black"
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black'
     }
-  };
-
-  componentDidMount() {
   }
 
-  componentDidShow() {
-  }
+  componentDidMount () {}
 
-  componentDidHide() {
-  }
+  componentDidShow () {}
 
-  componentDidCatchError() {
-  }
+  componentDidHide () {}
+
+  componentDidCatchError () {}
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render() {
+  render () {
     return (
       <Provider store={store}>
-        <Index/>
+        <Index />
       </Provider>
-    );
+    )
   }
 }
 
-Taro.render(<App/>, document.getElementById("app"));
+Taro.render(<App />, document.getElementById('app'))
